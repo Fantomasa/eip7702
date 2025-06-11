@@ -20,6 +20,10 @@ npm install
 # Your private key for the Externally Owned Account (EOA)
 # Example: 0x123...abc
 EOA_PK=your_private_key_here
+
+# Sepolia RPC URL (from Infura, Alchemy, or other providers)
+# Example: https://sepolia.infura.io/v3/your-api-key
+SEPOLIA_RPC_URL=your_rpc_url_here
 ```
 
 ## Project Structure

@@ -5,9 +5,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const rpcUrl = process.env.SEPOLIA_RPC_URL;
-if (!rpcUrl) {
-  throw new Error("SEPOLIA_RPC_URL is not set");
+if (!process.env.EOA_PK || !process.env.SEPOLIA_RPC_URL) {
+  throw new Error("Missing required environment variables. Check README.md for setup instructions.");
 }
 
 export const relay = privateKeyToAccount(process.env.EOA_PK as `0x${string}`);
@@ -15,5 +14,5 @@ export const relay = privateKeyToAccount(process.env.EOA_PK as `0x${string}`);
 export const walletClient = createWalletClient({
   account: relay,
   chain: sepolia,
-  transport: http(rpcUrl)
+  transport: http(process.env.SEPOLIA_RPC_URL)
 });
