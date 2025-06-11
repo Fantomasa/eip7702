@@ -2,7 +2,6 @@ import { createWalletClient, http } from "viem";
 import { sepolia } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 
-// Bun automatically loads .env file
 const EOA_PK = process.env.EOA_PK;
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
 
